@@ -3,10 +3,10 @@
 <head>
     <title>Startside</title>
 
+
 </head>
 
 <body>
-
     <style>
         body {
             background-image: url('./bilde_bakgrunn_kornåker.jpg');
@@ -31,7 +31,7 @@
             justify-content: space-around;
             height: auto;
             width: auto;
-            border: none;   
+            border: none;
         }
 
         .col {
@@ -64,6 +64,13 @@
             color: white;
             text-decoration: none;
         }
+
+            #klokke {
+                font-size: 40px;
+                margin: 40px;
+                font-family: 'Courier 10 pitch';
+                font-weight: bolder
+            }
     </style>
 
 
@@ -115,22 +122,25 @@
         </div>
         <div class="col">
             <div class="row">
-                    <div>
-                            <iframe
-                                src="http://free.timeanddate.com/clock/i6wo3y92/n2546/szw210/szh300/hocfff/hbw0/hfc666/cf100/hncfff/fas30/fdi66/mqc000/mql10/mqw4/mqd98/mhc000/mhl15/mhw4/mhd100/mmc000/mml10/mmw1/mmd98/hhs2/hms2/hsv0"
-                                frameborder="0" width="210" height="300"></iframe>
-            
-                        </div>
+                <div id="klokke">
+                    13:59
+                </div>
             </div>
             <div class="row">
-                    <div>
-                            <script src="https://www.yr.no/sted/Norge/Rogaland/Sandnes/Hommersåk/ekstern_boks_liten.js"></script>
-                            <noscript><a href="https://www.yr.no/sted/Norge/Rogaland/Sandnes/Hommersåk/">yr.no: Værvarsel for
-                                    Hommersåk</a></noscript>
-                        </div>
+                <div>
+                    <script
+                        src="https://www.yr.no/sted/Norge/Rogaland/Sandnes/Hommersåk/ekstern_boks_liten.js"></script>
+                    <noscript><a href="https://www.yr.no/sted/Norge/Rogaland/Sandnes/Hommersåk/">yr.no: Værvarsel for
+                            Hommersåk</a></noscript>
+                </div>
             </div>
         </div>
     </div>
+    <script src="./klokke.js" />
+    <script type="text/javascript">
+        console.log('i slutten av body');
+    </script>
+
 </body>
 
 </html>
