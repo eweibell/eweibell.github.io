@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ReDirect</title>
+
+
+</head>
+
+<body>
+    <style>
+        body {
+            width: 100%;
+            min-height: 100vh;
+            padding: 5%;
+            background-image: linear-gradient(rgba(0, 8, 51, 0.356),rgba(0, 8, 51, 0.356)), url('./hd-wallpaper-3119826_1920.jpg');
+            background-size: 100%;
+        }
+
+        .widget {
+            display: block;
+            border: solid rgb(207, 0, 0) 6px;
+            background-color: crimson;
+            color: white;
+            font-family: Dyuthi, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 5px;
+            margin: 10px;
+            font-size: 25px;
+        }
+
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: auto;
+            width: auto;
+            border: none;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: auto;
+            width: auto;
+            border: none;
+        }
+
+        .image {
+            border: none;
+            height: 200px;
+            margin: 40px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: -30px;
+        }
+
+        li {
+            margin-bottom: 9px;
+            font-size: 22px;
+            font-weight: bold
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #klokke {
+            font-size: 40px;
+            margin: 40px;
+            font-family: 'Courier 10 pitch';
+            font-weight: bolder
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            padding: 5%;
+            background-image: linear-gradient url(hd-wallpaper-3119826_1920.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="widget">
+                    <h2>ReDirect</h2>
+                    <ul>
+                        <li><a href="rubismann.github.io/eweibell.github.io/startside">Startside </a></li>
+                        <li><a href="rubismann.github.io/eweibell.github.io/clock">Klokke</a></li>
+                    </ul>
+
+                </div>
+                <div id="klokke">
+                    Loading...
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./klokke.js" />
+    <script type="text/javascript">
+        console.log('i slutten av body');
+    </script>
+</div>
+</body>
+
+</html>
