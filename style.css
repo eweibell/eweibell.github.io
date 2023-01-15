@@ -1,0 +1,116 @@
+body {
+    /* min-height: 100vh; */
+    padding: 5%;
+    background-image: url('./hd-wallpaper-3119826_1920.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.widget {
+    display: block;
+    border: solid rgb(207, 0, 0) 6px;
+    background-color: crimson;
+    color: white;
+    font-family: Dyuthi, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5px;
+    margin: 10px;
+    font-size: 25px;
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    width: auto;
+    border: none;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+    width: auto;
+    border: none;
+}
+
+.image {
+    border: none;
+    height: 200px;
+    margin: 40px;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: -30px;
+}
+
+li {
+    margin-bottom: 9px;
+    font-size: 22px;
+    font-weight: bold
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#klokke {
+    font-size: 40px;
+    margin: 40px;
+    font-family: 'Courier 10 pitch';
+    font-weight: bolder
+}
+
+.klokkediv {
+    transition-duration: 0.4s;
+    border-color: #433f3f;
+    border-radius: 10px;
+    text-decoration-color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.klokkediv > p {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: large;
+}
+
+.klokkediv:hover {
+    background-color: #433f3f;
+    color: white;
+}
+
+.startsidediv {
+    transition-duration: 0.4s;
+    border-color: #433f3f;
+    border-radius: 10px;
+    text-decoration-color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.startsidediv > p {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: large;
+}
+
+.startsidediv:hover {
+    background-color: #433f3f;
+    color: white;
+}
