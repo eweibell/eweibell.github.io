@@ -76,14 +76,56 @@
             font-weight: bolder
         }
 
-        .container {
-            width: 100%;
-            min-height: 100vh;
-            padding: 5%;
-            background-image: linear-gradient url(hd-wallpaper-3119826_1920.jpg);
-            background-position: center;
-            background-size: cover;
+        .klokkediv {
+            transition-duration: 0.4s;
+            border-color: #433f3f;
+            border-radius: 10px;
+            text-decoration-color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
         }
+
+        .klokkediv > p {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: large;
+        }
+
+        .klokkediv:hover {
+            background-color: #433f3f;
+            color: white;
+        }
+
+        .startsidediv {
+            transition-duration: 0.4s;
+            border-color: #433f3f;
+            border-radius: 10px;
+            text-decoration-color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .startsidediv > p {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: large;
+        }
+
+        .startsidediv:hover {
+            background-color: #433f3f;
+            color: white;
+        }
+        
     </style>
 
 <div class="container">
@@ -91,12 +133,17 @@
         <div class="col">
             <div class="row">
                 <div class="widget">
-                    <h2>ReDirect</h2>
+                    <h2></h2>
                     <ul>
-                        <a href="/startside">Startside </a>
-                        <a href="/clock">Klokke</a>
+                        <a href="/startside" id ="link">
+                            <div class="startsidediv">
+                                <p>Startside!</p>
+                            </div>
+                        <a href="/clock" id ="link">
+                            <div class="klokkediv">
+                                <p>Klokke!</p>
+                            </div>
                     </ul>
-
                 </div>
                 <div id="klokke">
                     Loading...
