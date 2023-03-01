@@ -2,7 +2,5 @@
 console.log('i dato.js');
 const dato = document.getElementById('dato')
 
-dato.style.color = 'black';
-
 const now = new Date();
 dato.innerHTML = now.getFullYear() + '.' + toSiffer(now.getMonth() + 1) + '.' + toSiffer(now.getDate());

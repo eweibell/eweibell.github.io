@@ -9,9 +9,9 @@ const toSiffer = (innverdi) => {
     return innverdi;
 }
 
-klokke.style.color = 'black';
-
-window.setInterval(function() {
-  const klokke = document.getElementById('klokke')
-  const now = new Date();
-  klokke.innerHTML = toSiffer(now.getHours()) + ':' + toSiffer(now.getMinutes())}, 1000);
+const setTime = function() {
+    const now = new Date();
+    klokke.innerHTML = toSiffer(now.getHours()) + ':' + toSiffer(now.getMinutes())
+};
+setTime();
+window.setInterval(setTime, 1000);
