@@ -81,6 +81,22 @@ a {
     font-size: 15px;
 }
 
+#blue {
+    color: #4285F4
+}
+
+#red {
+    color: #DB4437
+}
+
+#yellow {
+    color: #F4B400
+}
+
+#green {
+    color: #0F9D58
+}
+
 .time {
     display: grid;
     grid-template-columns: auto auto auto;
