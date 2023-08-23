@@ -83,18 +83,22 @@ a {
 
 #blue {
     color: #4285F4
+    margin: -30px;
 }
 
 #red {
     color: #DB4437
+    margin: -30px;
 }
 
 #yellow {
     color: #F4B400
+    margin: -30px;
 }
 
 #green {
     color: #0F9D58
+    margin: -30px;
 }
 
 .time {
