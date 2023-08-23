@@ -81,25 +81,24 @@ a {
     font-size: 15px;
 }
 
-#blue {
-    color: #4285F4
-    margin: -30px;
+.g-blue {
+  color:#4285F4;
+  font-size: 15px;
+}
+.o-red {
+  color:#DB4437;
+  font-size: 15px;
+}
+.o-yellow {
+  color:#F4B400;
+  font-size: 15px;
+}
+.l-green {
+  color:#0F9D58;
+  font-size: 15px;
 }
 
-#red {
-    color: #DB4437
-    margin: -30px;
-}
 
-#yellow {
-    color: #F4B400
-    margin: -30px;
-}
-
-#green {
-    color: #0F9D58
-    margin: -30px;
-}
 
 .time {
     display: grid;
