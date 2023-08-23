@@ -81,9 +81,30 @@ a {
     font-size: 15px;
 }
 
-.google {
-    color: #09E038;
-    font-size: 15px;
+.google h2 {
+    letter-spacing: -2px;
+    width: 100%;
+    text-align: center;
+}
+
+.google h2 span {
+    /*margin-right: -1px;*/
+}
+
+.blue {
+    color: #4285F4;
+}
+
+.red {
+    color: #DB4437;
+}
+
+.yellow {
+    color: #F4B400;
+}
+
+.green {
+    color: #0F9D58;
 }
 
 .time {
