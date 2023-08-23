@@ -81,24 +81,10 @@ a {
     font-size: 15px;
 }
 
-.g-blue {
-  color:#4285F4;
-  font-size: 15px;
+.google {
+    color: #09E038;
+    font-size: 15px;
 }
-.o-red {
-  color:#DB4437;
-  font-size: 15px;
-}
-.o-yellow {
-  color:#F4B400;
-  font-size: 15px;
-}
-.l-green {
-  color:#0F9D58;
-  font-size: 15px;
-}
-
-
 
 .time {
     display: grid;
