@@ -7,7 +7,7 @@ body {
 }
 
 .widget {
-    display: block;
+    display: inline-block;
     border: solid rgb(240, 240, 240) 6px;
     background-color: white;
     color: black;
