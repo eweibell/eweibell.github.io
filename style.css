@@ -8,9 +8,9 @@ body {
 
 .widget {
     display: block;
-    border: solid rgb(207, 0, 0) 6px;
-    background-color: crimson;
-    color: white;
+    border: solid rgb(255, 255, 255) 6px;
+    background-color: white;
+    color: black;
     font-family: Dyuthi, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 5px;
     margin: 10px;
