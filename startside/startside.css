@@ -76,9 +76,17 @@ a {
     font-size: 15px;
 }
 
+.video li {
+    color: white;
+}
+
 .Chat {
     color: rgb(43,150,126);
     font-size: 15px;
+}
+
+.chat li {
+    color: white;
 }
 
 .google h2 {
