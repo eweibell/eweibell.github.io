@@ -77,7 +77,7 @@ a {
 }
 
 .chat {
-    color: rgb(43,150,126);
+    color: rgbw(0,0,0,250);
     font-size: 15px;
 }
 
