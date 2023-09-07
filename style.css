@@ -9,7 +9,7 @@ body {
 .widget {
     display: inline-block;
     border: solid rgb(240, 240, 240) 6px;
-    background-color: white;
+    background-color: crimson;
     color: solid rgb(0,0,0);
     font-family: Dyuthi, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 5px;
