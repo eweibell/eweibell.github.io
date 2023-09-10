@@ -89,11 +89,6 @@ a {
     background-color: #433f3f;
     color: white;
 }
-.startside {
-    border: 2px solid #000; /* Her kan du endre tykkelsen (2px) og fargen (#000) etter dine preferanser */
-    padding: 5px; /* Legg til padding for å gi plass til rammen */
-    text-decoration: none; /* Fjerner standard lenke-understrekning */
-}
 .startsidediv {
     transition-duration: 0.4s;
     border-color: #433f3f;
@@ -112,6 +107,8 @@ a {
     font-weight: bold;
     text-decoration: none;
     font-size: large;
+    border:3px;
+    border-color:black;
 }
 
 .startsidediv:hover {
