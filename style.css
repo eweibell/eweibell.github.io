@@ -24,7 +24,7 @@ body {
     justify-content: space-around;
     height: auto;
     width: auto;
-    border: none;
+    border: solid rgb(255, 0, 0) 6px;
 }
 
 .col {
