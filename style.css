@@ -63,6 +63,8 @@ a {
     margin: 40px;
     font-family: 'Courier 10 pitch';
     font-weight: bolder
+    border-radius: 3px;
+    border-color: black;
 }
 
 .klokkediv {
@@ -107,8 +109,6 @@ a {
     font-weight: bold;
     text-decoration: none;
     font-size: large;
-    border-radius:3px;
-    border-color:black;
 }
 
 .startsidediv:hover {
