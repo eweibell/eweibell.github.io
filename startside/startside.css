@@ -41,6 +41,10 @@ body {
     width: auto;
     border: none;
 }
+a:hover {
+    text-decoration: white wavy underline;
+}
+
 
 .col {
     display: flex;
