@@ -1,5 +1,5 @@
 body {
-    background: rgb(33,33,33);
+    background: rgb(33, 33, 33);
 }
 
 .widget {
@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     align-items: center;
     border: solid rgb(46, 46, 46);
-    background-color: rgb(46,46,46);
+    background-color: rgb(46, 46, 46);
     color: white;
     font-family: 'Noto Sans', sans-serif;
     padding: 2px;
@@ -41,6 +41,25 @@ body {
     align-items: center;
 }
 
+.line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(46, 46, 46);
+    border-radius: 6px;
+    padding: 0px;
+    margin: 15px;
+}
+
+.line div {
+    border-right: solid 1px rgb(30, 30, 30);
+    border-left: solid 1px rgb(30, 30, 30);
+    padding: 3px;
+    color: rgb(150, 150, 159);
+    font-size: 14px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
 .image {
     border: none;
     height: 200px;
@@ -67,12 +86,12 @@ body {
 }
 
 a {
-    color: rgb(150,150,159);
+    color: rgb(150, 150, 159);
     text-decoration: none;
 }
 
 .video {
-    color: rgb(159,24,39);
+    color: rgb(159, 24, 39);
     font-size: 15px;
 }
 
@@ -81,7 +100,7 @@ a:hover {
 }
 
 .chat {
-    color: rgb(43,150,126);
+    color: rgb(43, 150, 126);
     font-size: 15px;
 }
 

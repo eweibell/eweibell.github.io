@@ -1,16 +1,17 @@
 body {
     /* min-height: 100vh; */
     padding: 5%;
-    background-image: url('./hd-wallpaper-3119826_1920.jpg');
+    /* background-image: url('./hd-wallpaper-3119826_1920.jpg'); */
+    background-color: rgb(70,70,70);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .widget {
     display: block;
-    border: solid rgb(207, 0, 0) 6px;
-    background-color: crimson;
-    color: white;
+    border: solid rgb(224, 224, 224) 6px;
+    background-color: rgb(185, 185, 185);
+    color: black;
     font-family: Dyuthi, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 5px;
     margin: 10px;
@@ -58,11 +59,13 @@ a {
     text-decoration: none;
 }
 
+
 #klokke {
     font-size: 40px;
     margin: 40px;
     font-family: 'Courier 10 pitch';
-    font-weight: bolder
+    font-weight: bolder;
+    
 }
 
 .klokkediv {
@@ -70,6 +73,7 @@ a {
     border-color: #433f3f;
     border-radius: 10px;
     text-decoration-color: black;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -95,6 +99,7 @@ a {
     border-color: #433f3f;
     border-radius: 10px;
     text-decoration-color: black;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
