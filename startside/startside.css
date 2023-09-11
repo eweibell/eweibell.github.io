@@ -79,27 +79,7 @@ a {
 a:hover {
     text-decoration: red wavy underline;
 }
-/*
-.youtube:hover {
-    text-decoration: underline;
-}
 
-.nrk:hover {
-    text-decoration: underline;
-}
-
-.disneyplus:hover {
-    text-decoration: underline;
-}
-
-.netflix:hover {
-    text-decoration: underline;
-}
-
-.hbo:hover {
-    text-decoration: underline;
-}
-*/
 .chat {
     color: rgb(43,150,126);
     font-size: 15px;
