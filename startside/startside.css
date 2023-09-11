@@ -18,7 +18,21 @@ body {
     padding-bottom: 20%;
     border-radius: 6px;
 }
-
+.youtube {
+    color: #c4302b;
+}
+.NrkTv {
+    color: white;
+}
+.Disney+ {
+    color: #113CCF;
+}
+.Netflix {
+    color: #E50914 ;
+}
+.HBOMax {
+    color: #7ba7f2;
+}
 .row {
     display: flex;
     flex-direction: row;
