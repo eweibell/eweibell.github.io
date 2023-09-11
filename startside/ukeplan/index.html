@@ -1,19 +1,36 @@
-<html lang="no">
+<html>
+    <body>
 
-<head>
-    <title>Ukeplan</title>
-    <link rel="stylesheet" href="ukeplan.css"/>
-</head>
+    <h2>What day is it?</h2>
 
-<body>
-<div class="row center">
-        <div class="row">
-          
-        </div>
-</div>
-<script src="./ukeplan.js" ></script>
-<script type="text/javascript">
-    console.log('i slutten av body');
-</body>
+    <p id="demo"></p>
 
-</html>
+    <script>
+    function myFunction() {
+    var time = new Date().getDay();
+    var odd = ["1", "3", 
+
+ "5","7","9","11","13","15","17","19","21","23","25","27","29","31"];
+    var even = ["2","4",           
+ "6","8","10","12","14","16","18","20","22","24","26","28","30"];
+checknum = odd.includes(time);
+
+if (checknum == true) {
+        greeting = "Odd Day";
+    } else {
+        greeting = "Even Day";
+}
+//document.getElementById("demo").innerHTML = greeting;
+console.log(time);
+console.log(checknum);
+console.log(greeting);
+}
+
+    </script>
+
+    <script type="text/javascript">
+        document.write(myFunction())
+    </script>
+
+    </body>
+    </html>
