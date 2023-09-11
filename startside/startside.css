@@ -67,7 +67,7 @@ body {
 }
 
 a {
-    color: rgb(99,99,99);
+    color: rgb(150,150,159);
     text-decoration: none;
 }
 
@@ -77,7 +77,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: red wavy underline;
 }
 /*
 .youtube:hover {
