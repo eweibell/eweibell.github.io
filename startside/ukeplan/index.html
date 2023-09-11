@@ -1,36 +1,31 @@
 <html>
-    <body>
+<body>
 
-    <h2>What day is it?</h2>
+<h2>What day is it?</h2>
 
-    <p id="demo"></p>
+<p id="demo"></p>
 
-    <script>
-    function myFunction() {
+<script>
+function myFunction() {
     var time = new Date().getDay();
     var odd = ["1", "3", 
 
  "5","7","9","11","13","15","17","19","21","23","25","27","29","31"];
     var even = ["2","4",           
  "6","8","10","12","14","16","18","20","22","24","26","28","30"];
-checknum = odd.includes(time);
 
-if (checknum == true) {
+
+if (time = odd) {
         greeting = "Odd Day";
-    } else {
+    } else if (time = even) {
         greeting = "Even Day";
-}
-//document.getElementById("demo").innerHTML = greeting;
-console.log(time);
-console.log(checknum);
-console.log(greeting);
-}
+document.getElementById("demo").innerHTML = greeting;
 
-    </script>
+</script>
 
-    <script type="text/javascript">
-        document.write(myFunction())
-    </script>
+<script type="text/javascript">
+    document.write(myFunction())
+</script>
 
-    </body>
-    </html>
+</body>
+</html>
