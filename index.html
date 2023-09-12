@@ -7,27 +7,39 @@
 
 </head>
 
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col">
+    <body>
+    <div class="row center">
             <div class="row">
-                <div class="widget">
-                    <h2></h2>
-                    <ul>
-                        <a href="./startside/index.html" id ="link">
-                            <div class="startsidediv">
-                                <p>Startside</p>
-                            </div>
-                        <a href="./clock/index.html" id ="link">
-                            <div class="klokkediv">
-                                <p>Klokke</p>
-                            </div>
-                    </ul>
-                </div>
+                <form action="https://www.google.com/search" id="searchbar" target="_blank">
+                    <input type="search" id="name" name="q" required minlength="1" size="10" autocomplete="off"
+                        placeholder="S&oslash;k i Google">
+                </form>
             </div>
         </div>
-    </div>
-</div>
-</body>
+        <div class="time">
+            <div id="klokke">Loading...</div>
+            <div class="delimiter">|</div>
+            <div id="dato">Loading...</div>
+        </div>
+        <div class="row center">
+            <p id="splashtext">Loading...</p>
+        </div>
+        <div class="row">
+            <div class="widget video">
+                <h2></h2>
+                        <ul>
+                            <a href="./startside/index.html" id ="link">
+                                <div class="startsidediv">
+                                    <p>Startside</p>
+                                </div>
+                            <a href="./clock/index.html" id ="link">
+                                <div class="klokkediv">
+                                    <p>Klokke</p>
+                                </div>
+                        </ul>
+            </div>
+        <script src="klokke.js"></script>
+        <script src="splashtext.js"></script>
+        <script src="dato.js"></script>
+    </body>
 </html>
