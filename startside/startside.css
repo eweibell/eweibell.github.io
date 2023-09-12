@@ -18,65 +18,8 @@ body {
     padding-bottom: 20%;
     border-radius: 6px;
 }
-.youtube {
-    color: #c4302b;
-}
-.NrkTv {
-    color: #d1d1d6;
-}
-.Disneypluss {
-    color: #8ED1FD;
-}
-.Netflix {
-    color: #E50914 ;
-}
-.HBOMax {
-    color: #7ba7f2;
-}
-.Skolenmin {
-    color: #3e5dfc;
-}
-.Kikora {
-    color: #26c4a4;
-}
-.Timeplan {
-    color: #d1d1d6;
-}
-.Klasse {
-    color: #586c7c;
-}
-.ukeplan-denne {
-    color: #d1d1d6;
-}
-.ukeplan-neste {
-    color: #d1d1d6;
-}
-.Mail {
-    color: blue;
-}
-.Slides {
-    color: yellow;
-}
-.Classroom {
-    color: #16a15c;
-}
-.Docs {
-    color: blue;
-}
-.Drive {
-    color: #ea4335;
-}
-.Regneark {
-    color: green;
-}
-.ChatGpt {
-    color: #d1d1d6;
-}
-.PcService {
-    color: #d1d1d6;
-}
-.SkjermService {
-    color: #d1d1d6;
+.a {
+    color: #c1c5cc;
 }
 .row {
     display: flex;
