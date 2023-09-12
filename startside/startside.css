@@ -22,7 +22,7 @@ body {
     color: #c4302b;
 }
 .NrkTv {
-    color: white;
+    color: #d1d1d6;
 }
 .Disneypluss {
     color: #BFF5FD;
@@ -35,6 +35,48 @@ body {
 }
 .Skolenmin {
     color: #994ECE;
+}
+.Kikora {
+    color: #20242c;
+}
+.Timeplan {
+    color: #d1d1d6;
+}
+.Klasse {
+    color: #586c7c;
+}
+.ukeplan-denne {
+    color: #d1d1d6;
+}
+.ukeplan-neste {
+    color: #d1d1d6;
+}
+.Mail {
+    color: blue;
+}
+.Slides {
+    color: yellow;
+}
+.Classroom {
+    color: #16a15c;
+}
+.Docs {
+    color: blue;
+}
+.Drive {
+    color: #ea4335;
+}
+.Regneark {
+    color: green;
+}
+.ChatGpt {
+    color: #d1d1d6;
+}
+.PcService {
+    color: #d1d1d6;
+}
+.SkjermService {
+    color: #d1d1d6;
 }
 .row {
     display: flex;
@@ -113,7 +155,7 @@ a {
 }
 
 a:hover {
-    text-decoration: red wavy underline;
+    text-decoration: white wavy underline;
 }
 
 .Skole {
