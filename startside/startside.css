@@ -44,10 +44,6 @@ body {
     width: auto;
     border: none;
 }
-a:hover {
-    text-decoration: white wavy underline;
-}
-
 
 .col {
     display: flex;
@@ -60,6 +56,25 @@ a:hover {
 .center {
     justify-content: center;
     align-items: center;
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(46, 46, 46);
+    border-radius: 6px;
+    padding: 0px;
+    margin: 15px;
+}
+
+.line div {
+    border-right: solid 1px rgb(30, 30, 30);
+    border-left: solid 1px rgb(30, 30, 30);
+    padding: 3px;
+    color: rgb(150, 150, 159);
+    font-size: 14px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .image {
@@ -88,18 +103,21 @@ a:hover {
 }
 
 a {
-    color: white;
+    color: rgb(150, 150, 159);
     text-decoration: none;
 }
 
-.Video {
-    color: rgb(159,24,39);
+.video {
+    color: rgb(159, 24, 39);
     font-size: 15px;
 }
 
+a:hover {
+    text-decoration: red wavy underline;
+}
 
-.Chat {
-    color: rgb(111,111,255);
+.chat {
+    color: rgb(43, 150, 126);
     font-size: 15px;
 }
 
