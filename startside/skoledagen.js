@@ -29,7 +29,7 @@ const timeFagU1 = {
 }
 const skoledagenNow = new Date();
 
-const ukedag = new Date().getDay()
+const ukedag = skoledagenNow.getDay()
 
 const skoledagenDiv = document.getElementById('skoledagen')
 
@@ -45,21 +45,27 @@ timeTiderIDag.forEach((tt, index) => {
     const skoletimeStartDate = new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), tt[0], tt[1]);
     const skoletimeEndDate = new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), tt[2], tt[3]);
     const minutterSkoletime = minFromTo(skoletimeStartDate, skoletimeEndDate,)
+    const restMinAvSkoletime = minFromTo(skoledagenNow, skoletimeEndDate)
     const prosentTimeTid = (minutterSkoletime / minutterSkoledag) * 100
     const skoletimeDiv = document.createElement('div')
     const klokkeDiv = document.createElement('div')
     const fagDiv = document.createElement('div')
+    skoletimeDiv.className = 'skoletime'
     klokkeDiv.className = 'skoletimetid'
     fagDiv.className = 'skoletimefag'
+    if (restMinAvSkoletime < 0) {
+        skoletimeDiv.className = 'skoletime ferdig'
+    }
     const contentKlokke = document.createTextNode(`${tt[0]}:${tt[1]}-${tt[2]}:${tt[3]}`)
     const contentFag = document.createTextNode(`${timeFagU1[ukedager[ukedag]][index]}`)
     fagDiv.appendChild(contentFag)
-    klokkeDiv.appendChild(contentKlokke)
+    if (timeFagU1[ukedager[ukedag]][index] !== '') {
+        klokkeDiv.appendChild(contentKlokke)
+    }
     skoletimeDiv.appendChild(fagDiv)
     skoletimeDiv.appendChild(klokkeDiv)
     skoledagenDiv.appendChild(skoletimeDiv)
     skoletimeDiv.style.width = prosentTimeTid + '%'
-    const restMinAvSkoletime = minFromTo(skoledagenNow, skoletimeEndDate)
-    console.log(restMinAvSkoletime)
+    
 });
 skoledagenDiv.style.width = '82.5vw'
