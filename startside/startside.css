@@ -18,6 +18,9 @@ body {
     padding-bottom: 20%;
     border-radius: 0.5vw;
 }
+.a {
+    color: #c1c5cc;
+}
 
 .row {
     display: flex;
@@ -100,7 +103,7 @@ a:hover {
 }
 
 .chat {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 155);
     font-size: 15px;
 }
 
@@ -183,9 +186,7 @@ a:hover {
     text-align: center;
     font-size: 17;
 }
-.a {
-    color: #c1c5cc;
-}
+
 #searchbar input:focus-visible {
     outline: none;
 }
