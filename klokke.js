@@ -9,7 +9,7 @@ const toSiffer = (innverdi) => {
     return innverdi;
 }
 
-klokke.style.color = 'black';
+klokke.style.color = 'white';
 
 window.setInterval(function() {
   const klokke = document.getElementById('klokke')
