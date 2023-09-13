@@ -20,11 +20,11 @@ const timeTider = {
 
 const timeFagU1 = {
      'søndag': ['HELG'],
-    mandag: ['Frokost', 'Norsk', 'Programmering', 'Mat', 'Matte', 'MAF', 'Samfunnsfag'],
-    tirsdag: ['Frokost', 'Gym', 'Naturfag', 'Mat', 'Norsk', 'KRLE'],
-    onsdag: ['Frokost', 'Engelsk', 'Norsk', 'Mat', 'Samfunnsfag'],
-    torsdag: ['Frokost', 'Matte', 'Engelsk', 'Mat', 'Timen Livet', 'MAF'],
-    fredag: ['Frokost', 'Matte', 'Mat og Helse', 'Mat', 'Mat og Helse', 'Mat og Helse'],
+    mandag: ['Frokost', 'Norsk', '', 'Programmering', 'FRI', 'Matte', '', 'MAF', '', 'Samfunnsfag'],
+    tirsdag: ['Frokost', 'Kroppsøving', '', 'Naturfag', 'Mat', 'Norsk', '', 'KRLE'],
+    onsdag: ['Frokost', 'Engelsk', '', 'Norsk', 'Mat', 'Samfunnsfag'],
+    torsdag: ['Frokost', 'Matte', '', 'Engelsk', 'Mat', 'Timen Livet', '', 'MAF'],
+    fredag: ['Frokost', 'Matte', '', 'Mat og Helse', 'Mat', 'Mat og Helse', '', 'Mat og Helse'],
     'lørdag': ['HELG'],
 }
 const skoledagenNow = new Date();
