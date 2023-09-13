@@ -27,6 +27,17 @@ const timeFagU1 = {
     fredag: ['Frokost', 'KRLE', '', 'Gym', 'FRI', 'Matte', '', 'Samfunnsfag'],
     'lørdag': ['HELG'],
 }
+
+const timeFagU2 = {
+    'søndag': ['HELG'],
+    mandag: ['Frokost', 'Norsk', '', 'Kroppsøving', 'FRI', 'Matte', '', 'Fransk', '', 'KRLE'],
+    tirsdag: ['Frokost', 'Norsk', '', 'Samfunnsfag', 'FRI', 'Programmering', '', 'Programmering',],
+    onsdag: ['Frokost', 'Matte', '', 'Timen Livet', 'FRI', 'Engelsk'],
+    torsdag: ['Frokost', 'Norsk', '', 'Naturfag', 'FRI', 'Fransk', '', 'Engelsk'],
+    fredag: ['Frokost', 'Mat og Helse', '', 'Mat og Helse', 'FRI', 'Mat og Helse', '', 'Gym'],
+    'lørdag': ['HELG'],
+    
+}
 const skoledagenNow = new Date();
 
 const ukedag = new Date().getDay()
