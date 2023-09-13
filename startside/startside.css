@@ -94,7 +94,7 @@ a {
 }
 
 .video {
-    color: rgb(159, 24, 39);
+    color: rgb(255, 255, 255);
     font-size: 15px;
 }
 
@@ -103,7 +103,7 @@ a:hover {
 }
 
 .chat {
-    color: rgb(255, 255, 155);
+    color: rgb(255, 255, 255);
     font-size: 15px;
 }
 
