@@ -10,17 +10,15 @@ body {
     background-color: rgb(46, 46, 46);
     color: white;
     font-family: 'Noto Sans', sans-serif;
-    padding: 2px;
-    margin: 5px;
+    padding: 0.1vw;
+    margin: 0.2vw;
     font-size: 12px;
     height: 0;
     width: 20%;
     padding-bottom: 20%;
-    border-radius: 6px;
+    border-radius: 0.5vw;
 }
-.a {
-    color: #c1c5cc;
-}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -53,7 +51,7 @@ body {
     margin: 15px;
 }
 
-.line div {
+.line > div {
     border-right: solid 1px rgb(30, 30, 30);
     border-left: solid 1px rgb(30, 30, 30);
     padding: 3px;
@@ -92,7 +90,7 @@ a {
     text-decoration: none;
 }
 
-.Video {
+.video {
     color: rgb(159, 24, 39);
     font-size: 15px;
 }
@@ -101,8 +99,8 @@ a:hover {
     text-decoration: white wavy underline;
 }
 
-.Skole {
-    color: rgb(255, 255, 255);
+.chat {
+    color: rgb(43, 150, 126);
     font-size: 15px;
 }
 
@@ -185,7 +183,24 @@ a:hover {
     text-align: center;
     font-size: 17;
 }
-
+.a {
+    color: #c1c5cc;
+}
 #searchbar input:focus-visible {
     outline: none;
+}
+
+#skoledagen {
+    width: 86vw;
+}
+
+.skoletimetid {
+    font-size: 12px;
+    text-align: center;
+}
+
+.skoletimefag {
+    font-size: 16px;
+    overflow: hidden;
+    text-align: center;
 }
