@@ -36,47 +36,77 @@ const timeFagU2 = {
     torsdag: ['Frokost', 'Norsk', '', 'Naturfag', 'FRI', 'Fransk', '', 'Engelsk'],
     fredag: ['Frokost', 'Mat og Helse', '', 'Mat og Helse', 'FRI', 'Mat og Helse', '', 'Gym'],
     'lørdag': ['HELG'],
-    
+
+}
+const timestampNow = (minuttOffset = 0) => {
+    const now = new Date();
+    const timeOffset = minuttOffset / 60;
+    return new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + timeOffset, now.getMinutes() + minuttOffset % 60);
 }
 const skoledagenNow = new Date();
-
+// let offset = 0;
+// const skoledagenNow = timestampNow(offset)
 const ukedag = skoledagenNow.getDay()
 
 const skoledagenDiv = document.getElementById('skoledagen')
+const skoledagenTimerDiv = document.createElement('div')
+skoledagenTimerDiv.className = 'skoledagen'
+skoledagenDiv.appendChild(skoledagenTimerDiv)
 
 console.log('skoledagenDiv getClientRects', skoledagenDiv.getClientRects())
 
 const timeTiderIDag = timeTider[ukedager[ukedag]];
+const skoleDagEndDate = new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), timeTiderIDag.at(-1).at(2), timeTiderIDag.at(-1).at(3))
 const minutterSkoledag = minFromTo(
     new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), timeTiderIDag.at(0).at(0), timeTiderIDag.at(0).at(1)),
-    new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), timeTiderIDag.at(-1).at(2), timeTiderIDag.at(-1).at(3)))
+    skoleDagEndDate)
 
+const renderSkoletimer = (containerDiv, renderTimestamp) => {
+    containerDiv.innerHTML = '';
+    timeTiderIDag.forEach((tt, index) => {
+        const skoletimeStartDate = new Date(renderTimestamp.getFullYear(), renderTimestamp.getMonth(), renderTimestamp.getDate(), tt[0], tt[1]);
+        const skoletimeEndDate = new Date(renderTimestamp.getFullYear(), renderTimestamp.getMonth(), renderTimestamp.getDate(), tt[2], tt[3]);
+        const minutterSkoletime = minFromTo(skoletimeStartDate, skoletimeEndDate,)
+        const restMinAvSkoletime = minFromTo(renderTimestamp, skoletimeEndDate)
+        const prosentTimeTid = (minutterSkoletime / minutterSkoledag) * 100
+        const skoletimeDiv = document.createElement('div')
+        const klokkeDiv = document.createElement('div')
+        const fagDiv = document.createElement('div')
+        skoletimeDiv.className = 'skoletime'
+        klokkeDiv.className = 'skoletimetid'
+        fagDiv.className = 'skoletimefag'
+        if (restMinAvSkoletime < 0) {
+            skoletimeDiv.className = 'skoletime ferdig'
+        }
+        const contentKlokke = document.createTextNode(`${tt[0]}:${tt[1]}-${tt[2]}:${tt[3]}`)
+        const contentFag = document.createTextNode(`${timeFagU1[ukedager[ukedag]][index]}`)
+        fagDiv.appendChild(contentFag)
+        if (timeFagU1[ukedager[ukedag]][index] !== '') {
+            klokkeDiv.appendChild(contentKlokke)
+        }
+        skoletimeDiv.appendChild(fagDiv)
+        skoletimeDiv.appendChild(klokkeDiv)
+        containerDiv.appendChild(skoletimeDiv)
+        skoletimeDiv.style.width = prosentTimeTid + '%'
+    });
+}
 
-timeTiderIDag.forEach((tt, index) => {
-    const skoletimeStartDate = new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), tt[0], tt[1]);
-    const skoletimeEndDate = new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), tt[2], tt[3]);
-    const minutterSkoletime = minFromTo(skoletimeStartDate, skoletimeEndDate,)
-    const restMinAvSkoletime = minFromTo(skoledagenNow, skoletimeEndDate)
-    const prosentTimeTid = (minutterSkoletime / minutterSkoledag) * 100
-    const skoletimeDiv = document.createElement('div')
-    const klokkeDiv = document.createElement('div')
-    const fagDiv = document.createElement('div')
-    skoletimeDiv.className = 'skoletime'
-    klokkeDiv.className = 'skoletimetid'
-    fagDiv.className = 'skoletimefag'
-    if (restMinAvSkoletime < 0) {
-        skoletimeDiv.className = 'skoletime ferdig'
+const minLeft = document.createElement('div')
+
+skoledagenDiv.appendChild(minLeft)
+
+const progressInterval = 1;
+window.setInterval(() => {
+    // offset = offset + (progressInterval / 60)
+    const restMinAvSkoledag = minFromTo(timestampNow(), skoleDagEndDate)
+    if (restMinAvSkoledag > 0) {
+        minLeft.style.width = `${82.5 / minutterSkoledag * (minutterSkoledag - restMinAvSkoledag)}vw`;
+    } else {
+        minLeft.style.width = `82.5vw`;
     }
-    const contentKlokke = document.createTextNode(`${tt[0]}:${tt[1]}-${tt[2]}:${tt[3]}`)
-    const contentFag = document.createTextNode(`${timeFagU1[ukedager[ukedag]][index]}`)
-    fagDiv.appendChild(contentFag)
-    if (timeFagU1[ukedager[ukedag]][index] !== '') {
-        klokkeDiv.appendChild(contentKlokke)
-    }
-    skoletimeDiv.appendChild(fagDiv)
-    skoletimeDiv.appendChild(klokkeDiv)
-    skoledagenDiv.appendChild(skoletimeDiv)
-    skoletimeDiv.style.width = prosentTimeTid + '%'
-    
-});
-skoledagenDiv.style.width = '82.5vw'
+    renderSkoletimer(skoledagenTimerDiv, timestampNow())
+}, progressInterval * 1000)
+
+skoledagenTimerDiv.style.width = '82.5vw'
+// minLeft.style.width = `${82.5 / minutterSkoledag * (minutterSkoledag - restMinAvSkoledag)}vw`;
+minLeft.style.borderBottom = 'solid thin yellow'
