@@ -1,6 +1,6 @@
 .background-element {
    background-image: url('https://github.com/Jonasmix/jonasmix.github.io/blob/main/IMG_2142.jpeg?raw=true'); /* Replace with the URL of your image */
-   background-size: contain; /* You can use other values like 'contain' if needed */
+   background-size: cover; /* You can use other values like 'contain' if needed */
    background-repeat: no-repeat;
    height: 300px; /* Set the height of the element */
 }
