@@ -3,6 +3,13 @@
    background-size: contain; /* You can use other values like 'contain' if needed */
    background-repeat: no-repeat;
    height: 600px; /* Set the height of the element */
+   position: relative; /* Add position: relative; to enable z-index */
+   z-index: 0; /* Set the z-index value */
+}
+
+.background-element p {
+    position: relative; /* Add position: relative; to enable z-index */
+    z-index: 1; /* Set a higher z-index value to make the text appear above the background */
 }
 
 .widget {
