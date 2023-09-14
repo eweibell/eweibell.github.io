@@ -1,8 +1,9 @@
 .background-element {
    background-image: url('https://github.com/Jonasmix/jonasmix.github.io/blob/main/IMG_2142.jpeg?raw=true'); /* Replace with the URL of your image */
-   background-size: cover; /* You can use other values like 'contain' if needed */
+   background-size: cover;
    background-repeat: no-repeat;
-   height: 300px; /* Set the height of the element */
+   background-attachment: fixed; /* Dette er valgfritt - det vil låse bakgrunnen i visningen når du ruller siden */
+   background-position: center center; /* Dette sentrerer bildet både horisontalt og vertikalt */
 }
 
 
