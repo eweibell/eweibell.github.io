@@ -109,4 +109,4 @@ window.setInterval(() => {
 
 skoledagenTimerDiv.style.width = '82.5vw'
 // minLeft.style.width = `${82.5 / minutterSkoledag * (minutterSkoledag - restMinAvSkoledag)}vw`;
-minLeft.style.borderBottom = 'solid thin yellow'
+minLeft.style.borderBottom = 'solid 7px rgb(160,160,160)'
