@@ -2,6 +2,7 @@
    background-image: url('https://github.com/Jonasmix/jonasmix.github.io/blob/main/IMG_2142.jpeg?raw=true'); /* Replace with the URL of your image */
    background-size: cover; /* You can use other values like 'contain' if needed */
    background-repeat: no-repeat;
+   height: 100%;
    position: relative; /* Add position: relative; to enable z-index */
    z-index: 0; /* Set the z-index value */
 }
