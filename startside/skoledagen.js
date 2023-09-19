@@ -21,12 +21,10 @@ const days = Math.floor((currentDate - startDate) /
 var weekNumber = Math.ceil(days / 7);
 
 if (isEven(weekNumber)) {
-    ukeNum = timeFagU2
+    ukeNum = timeFagU2;
+} else {
+    ukeNum = timeFagU1;
 }
-else {
-    ukeNum = timeFagU1
-}
-
 const ukedager = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag']
 
 const timeTider = {
