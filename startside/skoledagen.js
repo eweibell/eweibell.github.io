@@ -6,6 +6,13 @@ const minFromTo = (start, end) => {
     return min
 }
 
+function isEven(num) {
+  return (num % 2 == 0);
+}
+
+const ukeplanDenne = document.getElementById('ukeplan-denne')
+const ukeplanNeste = document.getElementById('ukeplan-neste')
+
 const currentDate = new Date();
 const startDate = new Date(currentDate.getFullYear(), 0, 1);
 const days = Math.floor((currentDate - startDate) /
