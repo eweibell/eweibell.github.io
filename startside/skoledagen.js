@@ -73,7 +73,7 @@ const renderSkoletimer = (containerDiv, renderTimestamp) => {
         const contentKlokke = document.createTextNode(`${tt[0]}:${tt[1]}-${tt[2]}:${tt[3]}`)
         const contentFag = document.createTextNode(`${timeFagU1[ukedager[ukedag]][index]}`)
         fagDiv.appendChild(contentFag)
-        if (timeFagU1[ukedager[ukedag]][index] !== '') {
+        if (timeFagU2[ukedager[ukedag]][index] !== '') {
             klokkeDiv.appendChild(contentKlokke)
         }
         skoletimeDiv.appendChild(fagDiv)
