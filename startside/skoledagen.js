@@ -1,30 +1,3 @@
-const EVEN = 'EVEN'
-const ODD = 'ODD'
-
-const minFromTo = (start, end) => {
-    const min = Math.floor((end - start) / (60 * 1000));
-    return min
-}
-
-function isEven(num) {
-  return (num % 2 == 0);
-}
-
-const ukeplanDenne = document.getElementById('ukeplan-denne')
-const ukeplanNeste = document.getElementById('ukeplan-neste')
-
-const currentDate = new Date();
-const startDate = new Date(currentDate.getFullYear(), 0, 1);
-const days = Math.floor((currentDate - startDate) /
-    (24 * 60 * 60 * 1000));
-    
-var weekNumber = Math.ceil(days / 7);
-
-if (isEven(weekNumber)) {
-    ukeNum = timeFagU2;
-} else {
-    ukeNum = timeFagU1;
-}
 const ukedager = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag']
 
 const timeTider = {
@@ -100,7 +73,7 @@ const renderSkoletimer = (containerDiv, renderTimestamp) => {
         const contentKlokke = document.createTextNode(`${tt[0]}:${tt[1]}-${tt[2]}:${tt[3]}`)
         const contentFag = document.createTextNode(`${timeFagU1[ukedager[ukedag]][index]}`)
         fagDiv.appendChild(contentFag)
-        if (ukeNum[ukedager[ukedag]][index] !== '') {
+        if (timeFagU1[ukedager[ukedag]][index] !== '') {
             klokkeDiv.appendChild(contentKlokke)
         }
         skoletimeDiv.appendChild(fagDiv)
