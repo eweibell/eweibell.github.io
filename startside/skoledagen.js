@@ -1,3 +1,11 @@
+const EVEN = 'EVEN'
+const ODD = 'ODD'
+
+const minFromTo = (start, end) => {
+    const min = Math.floor((end - start) / (60 * 1000));
+    return min
+}
+
 const ukedager = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag']
 
 const timeTider = {
