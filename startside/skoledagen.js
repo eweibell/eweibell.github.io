@@ -1,34 +1,16 @@
 const EVEN = 'EVEN'
 const ODD = 'ODD'
 
+var ukeNum = ''
+
 const minFromTo = (start, end) => {
     const min = Math.floor((end - start) / (60 * 1000));
     return min
 }
 
-
-
-
 function isEven(num) {
   return (num % 2 == 0);
 }
-
-const currentDate = new Date();
-const startDate = new Date(currentDate.getFullYear(), 0, 1);
-const days = Math.floor((currentDate - startDate) /
-    (24 * 60 * 60 * 1000));
-    
-var weekNumber = Math.ceil(days / 7);
-
-if (isEven(weekNumber)) {
-    ukeNum = timeFagU2
-}
-else {
-    ukeNum = timeFagU1
-}
-
-
-
 
 const ukedager = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag']
 
@@ -60,8 +42,22 @@ const timeFagU2 = {
     torsdag: ['Frokost', 'Norsk', '', 'Naturfag', 'FRI', 'Fransk', '', 'Engelsk'],
     fredag: ['Frokost', 'Mat og Helse', '', 'Mat og Helse', 'FRI', 'Mat og Helse', '', 'Gym'],
     'lørdag': ['HELG'],
-
 }
+
+const currentSkoledagDate = new Date();
+const startSkoledagenDate = new Date(currentSkoledagDate.getFullYear(), 0, 1);
+const daysSkoledagen = Math.floor((currentSkoledagDate - startSkoledagenDate) /
+    (24 * 60 * 60 * 1000));
+    
+var weekNumber = Math.ceil(daysSkoledagen / 7);
+
+if (isEven(weekNumber)) {
+    ukeNum = timeFagU2
+}
+else {
+    ukeNum = timeFagU1
+}
+
 const timestampNow = (minuttOffset = 0) => {
     const now = new Date();
     const timeOffset = minuttOffset / 60;
