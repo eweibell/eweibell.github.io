@@ -87,7 +87,27 @@ const dropdownButton = document.getElementById('dropdownButton')
 
 console.log('skoledagenDiv getClientRects', skoledagenDiv.getClientRects())
 
-const renderSkoletimer = (containerDiv, renderTimestamp, timeTiderToday, minutterSkoledag, uke) => {
+function getScheduleForDate(date) {
+    const skoledagDate = new Date(date);
+    const startCurrentYearDate = new Date(skoledagDate.getFullYear(), 0, 1);
+    const daysSkoledagen = Math.floor((skoledagDate - startCurrentYearDate) /
+        (24 * 60 * 60 * 1000));     
+    var weekNumber = Math.ceil(daysSkoledagen / 7);
+    if (isEven(weekNumber)) {
+        return {
+            hours: timeTider[ukedager[skoledagDate.getDay()]],
+            subjects: timeFagU2[ukedager[skoledagDate.getDay()]],
+        }
+    }
+    else {
+        return {
+            hours: timeTider[ukedager[skoledagDate.getDay()]],
+            subjects: timeFagU1[ukedager[skoledagDate.getDay()]],
+        }
+    }
+}
+
+const renderSkoletimer = (containerDiv, renderTimestamp, timeTiderToday, minutterSkoledag, subjectToday) => {
     containerDiv.innerHTML = '';
     timeTiderToday.forEach((tt, index) => {
         const skoletimeStartDate = new Date(renderTimestamp.getFullYear(), renderTimestamp.getMonth(), renderTimestamp.getDate(), tt[0], tt[1]);
@@ -105,9 +125,9 @@ const renderSkoletimer = (containerDiv, renderTimestamp, timeTiderToday, minutte
             skoletimeDiv.className = 'skoletime ferdig'
         }
         const contentKlokke = document.createTextNode(`${tt[0]}:${tt[1]}-${tt[2]}:${tt[3]}`)
-        const contentFag = document.createTextNode(`${uke[ukedager[ukedag]][index]}`)
+        const contentFag = document.createTextNode(`${subjectToday[index]}`)
         fagDiv.appendChild(contentFag)
-        if (uke[ukedager[ukedag]][index] !== '') {
+        if (subjectToday[index] !== '') {
             klokkeDiv.appendChild(contentKlokke)
         }
         skoletimeDiv.appendChild(fagDiv)
@@ -118,25 +138,23 @@ const renderSkoletimer = (containerDiv, renderTimestamp, timeTiderToday, minutte
 }
 
 function renderSkoledag(containerDiv, date) {
+    const schedule = getScheduleForDate(date)
     containerDiv.innerHTML = '';
     const skoledagenTimerDiv = document.createElement('div')
     skoledagenTimerDiv.className = 'skoledagen'
     containerDiv.appendChild(skoledagenTimerDiv)
-    const timeTiderIDag = timeTider[ukedager[date.getDay()]];
-    const skoleDagEndDate = new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), timeTiderIDag.at(-1).at(2), timeTiderIDag.at(-1).at(3))
+    const skoleDagEndDate = new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), schedule.hours.at(-1).at(2), schedule.hours.at(-1).at(3))
     const minutterSkoledag = minFromTo(
-    new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), timeTiderIDag.at(0).at(0), timeTiderIDag.at(0).at(1)),
+    new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), schedule.hours.at(0).at(0), schedule.hours.at(0).at(1)),
     skoleDagEndDate)
     if (progressInterval === 0) {
         progressInterval = 1;
         progressIntervalSetup(skoleDagEndDate)
     }
     skoledagenTimerDiv.style.width = '82.5vw'
-    renderSkoletimer(skoledagenTimerDiv, date, timeTiderIDag, minutterSkoledag, ukeNum)
+    renderSkoletimer(skoledagenTimerDiv, date, schedule.hours, minutterSkoledag, schedule.subjects)
 }
 
-// Lage 2 diver for 2 skoledager
-// Kjøre renderSkoletimer for hver dag med offset tider
 function settInnNesteDager() {
     const skoledagNeste = document.createElement('div')
     const skoledagEtterNeste = document.createElement('div')
@@ -145,8 +163,8 @@ function settInnNesteDager() {
     skoledagNeste.className = 'line'
     skoledagEtterNeste.className = 'line'
     renderSkoledag(skoledagNeste, timestampOffset(1, 6, 0))
-    renderSkoledag(skoledagEtterNeste, timestampOffset(3, 6, 0))
-    dropdownButton.style.color = 'transparent'
+    renderSkoledag(skoledagEtterNeste, timestampOffset(2, 6, 0))
+    dropdownButton.style.display = 'none'
 }
 
 const minLeft = document.createElement('div')
