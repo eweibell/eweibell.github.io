@@ -87,7 +87,7 @@ const dropdownButton = document.getElementById('dropdownButton')
 
 console.log('skoledagenDiv getClientRects', skoledagenDiv.getClientRects())
 
-const renderSkoletimer = (containerDiv, renderTimestamp, timeTiderToday, minutterSkoledag) => {
+const renderSkoletimer = (containerDiv, renderTimestamp, timeTiderToday, minutterSkoledag, uke) => {
     containerDiv.innerHTML = '';
     timeTiderToday.forEach((tt, index) => {
         const skoletimeStartDate = new Date(renderTimestamp.getFullYear(), renderTimestamp.getMonth(), renderTimestamp.getDate(), tt[0], tt[1]);
@@ -105,9 +105,9 @@ const renderSkoletimer = (containerDiv, renderTimestamp, timeTiderToday, minutte
             skoletimeDiv.className = 'skoletime ferdig'
         }
         const contentKlokke = document.createTextNode(`${tt[0]}:${tt[1]}-${tt[2]}:${tt[3]}`)
-        const contentFag = document.createTextNode(`${ukeNum[ukedager[ukedag]][index]}`)
+        const contentFag = document.createTextNode(`${uke[ukedager[ukedag]][index]}`)
         fagDiv.appendChild(contentFag)
-        if (ukeNum[ukedager[ukedag]][index] !== '') {
+        if (uke[ukedager[ukedag]][index] !== '') {
             klokkeDiv.appendChild(contentKlokke)
         }
         skoletimeDiv.appendChild(fagDiv)
@@ -132,7 +132,7 @@ function renderSkoledag(containerDiv, date) {
         progressIntervalSetup(skoleDagEndDate)
     }
     skoledagenTimerDiv.style.width = '82.5vw'
-    renderSkoletimer(skoledagenTimerDiv, date, timeTiderIDag, minutterSkoledag)
+    renderSkoletimer(skoledagenTimerDiv, date, timeTiderIDag, minutterSkoledag, ukeNum)
 }
 
 // Lage 2 diver for 2 skoledager
