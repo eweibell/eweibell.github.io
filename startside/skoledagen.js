@@ -57,10 +57,10 @@ function nextMorningDate() {
 var weekNumber = Math.ceil(daysSkoledagen / 7);
 
 if (isEven(weekNumber)) {
-    ukeNum = timeFagU2
+    ukeNum = timeFagU1
 }
 else {
-    ukeNum = timeFagU1
+    ukeNum = timeFagU2
 }
 
 function timestampNow(minuttOffset = 0) {
