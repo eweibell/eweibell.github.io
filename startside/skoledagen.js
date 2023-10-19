@@ -60,7 +60,7 @@ if (isEven(weekNumber)) {
     ukeNum = timeFagU1
 }
 else {
-    ukeNum = timeFagU1
+    ukeNum = timeFagU2
 }
 
 function timestampNow(minuttOffset = 0) {
@@ -96,13 +96,13 @@ function getScheduleForDate(date) {
     if (isEven(weekNumber)) {
         return {
             hours: timeTider[ukedager[skoledagDate.getDay()]],
-            subjects: timeFagU2[ukedager[skoledagDate.getDay()]],
+            subjects: timeFagU1[ukedager[skoledagDate.getDay()]],
         }
     }
     else {
         return {
             hours: timeTider[ukedager[skoledagDate.getDay()]],
-            subjects: timeFagU1[ukedager[skoledagDate.getDay()]],
+            subjects: timeFagU2[ukedager[skoledagDate.getDay()]],
         }
     }
 }
