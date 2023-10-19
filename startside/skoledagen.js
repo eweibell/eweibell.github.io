@@ -60,7 +60,7 @@ if (isEven(weekNumber)) {
     ukeNum = timeFagU1
 }
 else {
-    ukeNum = timeFagU2
+    ukeNum = timeFagU1
 }
 
 function timestampNow(minuttOffset = 0) {
