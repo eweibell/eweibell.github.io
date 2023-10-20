@@ -84,6 +84,9 @@ const skoledagenDiv = document.getElementById('skoledagen')
 const skoledagNesteDiv = document.getElementById('nesteDag')
 const skoledagEtterNesteDiv = document.getElementById('etterNesteDag')
 const dropdownButton = document.getElementById('dropdownButton')
+const minLeftSkoledag = minFromTo(
+    new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), schedule.hours.at(0).at(0), schedule.hours.at(0).at(1)),
+    skoleDagEndDate)
 
 console.log('skoledagenDiv getClientRects', skoledagenDiv.getClientRects())
 
@@ -137,16 +140,13 @@ const renderSkoletimer = (containerDiv, renderTimestamp, timeTiderToday, minutte
     });
 }
 
-function renderSkoledag(containerDiv, date) {
+function renderSkoledag(containerDiv, date, minutterSkoledag) {
     const schedule = getScheduleForDate(date)
     containerDiv.innerHTML = '';
     const skoledagenTimerDiv = document.createElement('div')
     skoledagenTimerDiv.className = 'skoledagen'
     containerDiv.appendChild(skoledagenTimerDiv)
     const skoleDagEndDate = new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), schedule.hours.at(-1).at(2), schedule.hours.at(-1).at(3))
-    const minutterSkoledag = minFromTo(
-    new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), schedule.hours.at(0).at(0), schedule.hours.at(0).at(1)),
-    skoleDagEndDate)
     if (progressInterval === 0) {
         progressInterval = 1;
         progressIntervalSetup(skoleDagEndDate)
@@ -162,27 +162,27 @@ function settInnNesteDager() {
     skoledagEtterNesteDiv.appendChild(skoledagEtterNeste)
     skoledagNeste.className = 'line'
     skoledagEtterNeste.className = 'line'
-    renderSkoledag(skoledagNeste, timestampOffset(1, 6, 0))
-    renderSkoledag(skoledagEtterNeste, timestampOffset(2, 6, 0))
+    renderSkoledag(skoledagNeste, timestampOffset(1, 6, 0), minLeftSkoledag)
+    renderSkoledag(skoledagEtterNeste, timestampOffset(2, 6, 0), minLeftSkoledag)
     dropdownButton.style.display = 'none'
 }
 
 const minLeft = document.createElement('div')
 
-renderSkoledag(skoledagenDiv, skoledagenNow)
+renderSkoledag(skoledagenDiv, skoledagenNow, minLeftSkoledag)
 
 function progressIntervalSetup(skoleDagEndDate) {
     window.setInterval(() => {
         // offset = offset + (progressInterval / 60)
         const restMinAvSkoledag = minFromTo(timestampNow(), skoleDagEndDate)
         if (restMinAvSkoledag > 0) {
-            minLeft.style.width = `${82.5 / minutterSkoledag * (minutterSkoledag - restMinAvSkoledag)}vw`;
+            minLeft.style.width = `${82.5 / minLeftSkoledag * (minLeftSkoledag - restMinAvSkoledag)}vw`;
         } else {
             minLeft.style.width = `82.5vw`;
         }
-        renderSkoledag(skoledagenDiv, skoledagenNow)
+        renderSkoledag(skoledagenDiv, skoledagenNow, minLeftSkoledag)
         skoledagenDiv.appendChild(minLeft)
     }, progressInterval * 10000)
 }
-// minLeft.style.width = `${82.5 / minutterSkoledag * (minutterSkoledag - restMinAvSkoledag)}vw`;
+// minLeft.style.width = `${82.5 / minLeftSkoledag * (minLeftSkoledag - restMinAvSkoledag)}vw`;
 minLeft.style.borderBottom = 'solid 5px rgb(160,160,160)'
