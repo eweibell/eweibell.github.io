@@ -140,7 +140,7 @@ const renderSkoletimer = (containerDiv, renderTimestamp, timeTiderToday, minutte
     });
 }
 
-function renderSkoledag(containerDiv, date, minutterSkoledag) {
+function renderSkoledag(containerDiv, date, minSkoledag) {
     const schedule = getScheduleForDate(date)
     containerDiv.innerHTML = '';
     const skoledagenTimerDiv = document.createElement('div')
@@ -152,7 +152,7 @@ function renderSkoledag(containerDiv, date, minutterSkoledag) {
         progressIntervalSetup(skoleDagEndDate)
     }
     skoledagenTimerDiv.style.width = '82.5vw'
-    renderSkoletimer(skoledagenTimerDiv, date, schedule.hours, minutterSkoledag, schedule.subjects)
+    renderSkoletimer(skoledagenTimerDiv, date, schedule.hours, minSkoledag, schedule.subjects)
 }
 
 function settInnNesteDager() {
