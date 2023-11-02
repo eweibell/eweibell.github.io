@@ -80,6 +80,7 @@ const skoledagenNow = new Date();
 // const skoledagenNow = timestampNow(offset)
 const ukedag = skoledagenNow.getDay()
 
+const schedule = getScheduleForDate(date)
 const skoledagenDiv = document.getElementById('skoledagen')
 const skoledagNesteDiv = document.getElementById('nesteDag')
 const skoledagEtterNesteDiv = document.getElementById('etterNesteDag')
@@ -141,7 +142,6 @@ const renderSkoletimer = (containerDiv, renderTimestamp, timeTiderToday, minutte
 }
 
 function renderSkoledag(containerDiv, date, minSkoledag) {
-    const schedule = getScheduleForDate(date)
     containerDiv.innerHTML = '';
     const skoledagenTimerDiv = document.createElement('div')
     skoledagenTimerDiv.className = 'skoledagen'
@@ -156,6 +156,9 @@ function renderSkoledag(containerDiv, date, minSkoledag) {
 }
 
 function settInnNesteDager() {
+    const minLeftSkoledag = minFromTo(
+        new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), schedule.hours.at(0).at(0), schedule.hours.at(0).at(1)),
+        skoleDagEndDate)
     const skoledagNeste = document.createElement('div')
     const skoledagEtterNeste = document.createElement('div')
     skoledagNesteDiv.appendChild(skoledagNeste)
@@ -186,3 +189,4 @@ function progressIntervalSetup(skoleDagEndDate) {
 }
 // minLeft.style.width = `${82.5 / minLeftSkoledag * (minLeftSkoledag - restMinAvSkoledag)}vw`;
 minLeft.style.borderBottom = 'solid 5px rgb(160,160,160)'
+
