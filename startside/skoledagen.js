@@ -80,7 +80,7 @@ const skoledagenNow = new Date();
 // const skoledagenNow = timestampNow(offset)
 const ukedag = skoledagenNow.getDay()
 
-const schedule = getScheduleForDate(date)
+const schedule = getScheduleForDate(skoledagenNow)
 const skoledagenDiv = document.getElementById('skoledagen')
 const skoledagNesteDiv = document.getElementById('nesteDag')
 const skoledagEtterNesteDiv = document.getElementById('etterNesteDag')
