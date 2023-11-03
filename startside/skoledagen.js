@@ -147,7 +147,7 @@ function renderSkoledag(containerDiv, date, minSkoledag) {
     const skoledagenTimerDiv = document.createElement('div')
     skoledagenTimerDiv.className = 'skoledagen'
     containerDiv.appendChild(skoledagenTimerDiv)
-    const skoleDagEndDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(), schedule.hours.at(-1).at(2), schedule.hours.at(-1).at(3))
+    const skoleDagEndDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.hours.at(-1).at(2), date.hours.at(-1).at(3))
     if (progressInterval === 0) {
         progressInterval = 1;
         progressIntervalSetup(skoleDagEndDate)
