@@ -85,6 +85,7 @@ const skoledagenDiv = document.getElementById('skoledagen')
 const skoledagNesteDiv = document.getElementById('nesteDag')
 const skoledagEtterNesteDiv = document.getElementById('etterNesteDag')
 const dropdownButton = document.getElementById('dropdownButton')
+const skoleDagEndDate = new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), schedule.hours.at(-1).at(2), schedule.hours.at(-1).at(3))
 const minLeftSkoledag = minFromTo(
     new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), schedule.hours.at(0).at(0), schedule.hours.at(0).at(1)),
     skoleDagEndDate)
@@ -146,7 +147,6 @@ function renderSkoledag(containerDiv, date, minSkoledag) {
     const skoledagenTimerDiv = document.createElement('div')
     skoledagenTimerDiv.className = 'skoledagen'
     containerDiv.appendChild(skoledagenTimerDiv)
-    const skoleDagEndDate = new Date(skoledagenNow.getFullYear(), skoledagenNow.getMonth(), skoledagenNow.getDate(), schedule.hours.at(-1).at(2), schedule.hours.at(-1).at(3))
     if (progressInterval === 0) {
         progressInterval = 1;
         progressIntervalSetup(skoleDagEndDate)
