@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 4vw;
+}
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.task label {
+    font-size: 1.5vw;
+}
+
+#addTaskButton {
+    color: rgb(27, 27, 27);
+    font-weight: bold;
+    font-size: 1.3vw;
+    background-color: rgb(199, 199, 199);
+    border: 0.1vw grey solid;
+    border-radius: 0.5vw;
+    padding: 5px;
+    margin-left: 2vw;    
+    width: 10vw;
+    height: 6.5vh;
+    cursor: pointer;
+}
+
+#taskInput {
+    width: 15vw;
+    height: 5vh;
+    border: 0.2vw grey solid;
+    border-radius: 0.5vw;
+}
+
+.task button:hover {
+    background-color: darkred;
+}
+
+.delete-icon {
+    width: 1.2vw;
+}
+
+.delete-icon:hover {
+    content: url(trash-icon.svg);
+}
+
+.completed {
+    text-decoration: line-through;
+    color: grey;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 2.2vw;
+    height: 2.2vw;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: white;
+}
+
+input[type="checkbox"]:checked {
+    background-color: rgb(199, 199, 199);
+    border-color: black;
+}
