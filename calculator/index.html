@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="total">
+        <div id="top">
+            <div id="filler">
+                <div id="equation"></div>
+        
+            </div>
+        </div>
+        <div id="buttons">
+            <div class="col firstcol">
+                <div class="buttondiv"><button class="button edgebutton" id="1" onclick="addToEquationVariable('**')">^</button></div>
+                <div class="buttondiv"><button class="button" id="1" onclick="addToEquationVariableNumber(1)">1</button></div>
+                <div class="buttondiv"><button class="button" id="4" onclick="addToEquationVariableNumber(4)">4</button></div>
+                <div class="buttondiv"><button class="button" id="7" onclick="addToEquationVariableNumber(7)">7</button></div>
+                <div class="buttondiv"><button class="button" id="0" onclick="addToEquationVariableNumber(0)">0</button></div>
+            </div>
+            <div class="col">
+                <div class="buttondiv"><button class="button edgebutton" id="1" onclick="factorialClick()">!</button></div>
+                <div class="buttondiv"><button class="button" id="2" onclick="addToEquationVariableNumber(2)">2</button></div>
+                <div class="buttondiv"><button class="button" id="5" onclick="addToEquationVariableNumber(5)">5</button></div>
+                <div class="buttondiv"><button class="button" id="8" onclick="addToEquationVariableNumber(8)">8</button></div>
+                <div class="buttondiv"><button class="button" id="00" onclick="addToEquationVariable00('00')">00</button></div>
+            </div>
+            <div class="col">
+                <div class="buttondiv"><button class="button edgebutton" id="1" onclick="addToEquationVariableParentheses('&#40;')">&#40;</button></div>
+                <div class="buttondiv"><button class="button" id="3" onclick="addToEquationVariableNumber(3)">3</button></div>
+                <div class="buttondiv"><button class="button" id="6" onclick="addToEquationVariableNumber(6)">6</button></div>
+                <div class="buttondiv"><button class="button" id="9" onclick="addToEquationVariableNumber(9)">9</button></div>
+                <div class="buttondiv"><button class="button" id="." onclick="addToEquationVariable('.')">.</button></div>
+            </div>
+            <div class="col">
+                <div class="buttondiv"><button class="button edgebutton" id="1" onclick="addToEquationVariableParentheses('&#41;')">&#41;</button></div>
+                <div class="buttondiv"><button class="button" id="-" onclick="addToEquationVariable('-')">-</button></div>
+                <div class="buttondiv"><button class="button" id="+" onclick="addToEquationVariable('+')">+</button></div>
+                <div class="buttondiv" id="doublebuttondiv"><button class="button" onclick="calculateAnswer()">=</button></div>
+            </div>
+            <div class="col">
+                <div class="buttondiv"><button class="button edgebutton" id="1" onclick="addToEquationVariableNumber(1)">1</button></div>
+                <div class="buttondiv"><button class="button edgebutton" id="C" onclick="clearEquation()">C</button></div>
+                <div class="buttondiv"><button class="button edgebutton" id="/" onclick="addToEquationVariable('/')">/</button></div>
+                <div class="buttondiv"><button class="button edgebutton" id="%" onclick="addToEquationVariable('%')">%</button></div>
+                <div class="buttondiv"><button class="button edgebutton" id="*" onclick="addToEquationVariable('*')">*</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
