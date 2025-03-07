@@ -1,53 +1,42 @@
 <!DOCTYPE html>
 <html lang="no">
-
 <head>
-    <title>IntroSite</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@1&family=Noto+Sans&display=swap');
-    </style>
+    <title>eweibell's GitHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
 </head>
-
 <body>
-    <div class="row center">
-        <div class="row">
-            <form action="https://www.google.com/search" id="searchbar" target="_blank">
-                <input type="search" id="name" name="q" required minlength="1" size="10" autocomplete="off"
-                    placeholder="S&oslash;k i Google">
-            </form>
-        </div>
-    </div>
-    <div class="time">
-        <div id="klokke">Loading...</div>
-        <div class="delimiter">|</div>
-        <div id="dato">Loading...</div>
-    </div>
-    <div class="row center">
-        <p id="splashtext">Loading...</p>
-    </div>
-    <div class="row">
-        <div class="widget links">
-            <h2>Sites</h2>
-            <ul>
-                <a href="./startside/index.html" id ="link">
-                    <div class="startsidediv">
-                        <p>Startside</p>
-                    </div>
-                <a href="./clock/index.html" id ="link">
-                    <div class="klokkediv">
-                        <p>Klokke</p>
-                    </div>
-            </ul>
-        </div>
-    </div>
-    </div>
-    <script src="./klokke.js"></script>
-    <script src="./dato.js"></script>
-    <script src="./splashtext.js"></script>
-    <script type="text/javascript">
-        console.log('i slutten av body');
-    </script>
+    <ul id="side-header">
+        <div style="height: 10vh;"></div>
+        <li><a onclick="Navigate(0)" class="section-title"><span class="material-symbols-outlined">home</span><div style="width:1vw;"></div>Home</a></li>
+        <li><a onclick="Navigate(1)" class="section-title"><span class="material-symbols-outlined">link</span><div style="width:1vw;"></div>Links</a></li>
+        <li><a onclick="Navigate(2)" class="section-title"><span class="material-symbols-outlined">image</span><div style="width:1vw;"></div>Gallery</a></li>
+    </ul>
+        <section id="home" class="section">
+            <div class="introduction">
+                <h1>Hi, I'm Even</h1>
+                <p>Welcome to my web sandbox where I test stuff I see on the internet, develop my coding skills, and more</p>
+            </div>
+            <img src="assets/img/impuls-tale-cropped.png" alt="Bilde fra Impuls 2025">
+        </section>
+        <section id="links" class="section">
+            <h1>Some other stuff</h1>
+            <div>
+                <ul>
+                    <li><a href="startside/index.html">Startside</a> - A simple website for redirection to various websites. Also includes a google search bar, time/date and random quotes</li>
+                    <li><a href="calculator/index.html">Calculator</a> - A simple calculator project</li>
+                    <li><a href="info-qrcode/index.html">AllMyLinks</a> - A simple alternative to allmylinks.com</li>
+                    <li><a href="todo-list/index.html">To Do List</a> - A really simple to do list I made when I was bored. Missing a lot of features, only works on vertical displays</li>
+                    <li><a href="clock/index.html">Clock</a> - A simple website with only a clock (UTC+1)</li>
+                </ul>
+            </div> 
+        </section>
+        <section id="gallery" class="section">
+            <h1>Gallery</h1>
+            <div class="images">
+                <img src="./assets/img/gallery-desktop-purple.png" alt="Bildegalleri">
+            </div>
+        </section>
+        <script src="scrolling.js"></script>
 </body>
-
 </html>
