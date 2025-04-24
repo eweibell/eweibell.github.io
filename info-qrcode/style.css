@@ -43,9 +43,6 @@ body {
     font-style: normal;
 }
 
-
-
-
 #info-containers {
     display: flex;
     flex-direction: column;
@@ -61,7 +58,7 @@ body {
     border: 1vw rgb(211, 211, 211) solid;
     display: flex;
     flex-direction: row;
-    
+    margin-bottom: 2.5vh;
 }
 
 #phone-picture {
@@ -76,7 +73,7 @@ body {
     padding: 0;
     padding-top: 4vw;
     padding-left: 3.5vw;
-    font-size: 8vw;
+    font-size: 60px;
     font-weight: bold;
 }
 
@@ -112,4 +109,72 @@ body {
 
 .space {
     height: 2vh;
+}
+
+
+@media screen and (min-aspect-ratio: 0.48/1) {
+    body {
+        overflow: hidden;
+    }
+    
+    #parent-div {
+        flex-direction: row;
+        justify-content: space-around; /* Distribute space horizontally */
+    }
+    
+    .image-top {
+        margin: 8vw;
+        margin-top: 4vw;
+        margin-bottom: 5vh;
+        width: 30vw;
+    }
+
+    .overskrift {
+        margin: 0;
+        padding-top: 0;
+        
+        font-size: 4vw;
+        font-family: "Parkinsans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    .cont {
+        height: 10vh;
+        width: 40vw;
+        margin-right: 8vw;
+        border-radius: 2.5vw;
+        border: 5px rgb(211, 211, 211) solid;
+        display: flex;
+        margin-bottom: 2.5vh;
+    }
+
+    .picture {
+        padding: 0;
+        height: 6.5vh;
+        margin-left: 1.5vw;
+        margin-top: 2vh;
+    }
+
+    .cont-text {
+        align-self: center;
+        font-size: 2vw;
+        padding-bottom: 6vh;
+    }
+
+    #phone-picture {
+        height: 6vh;
+        width: auto;
+        padding: 0;
+        margin-top: 2.25vh;
+        margin-left: 1.5vw;
+    }
+
+    #info-containers {
+        margin: 8vw;
+        margin-top: 4vw;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
 }
