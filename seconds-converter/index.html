@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utregning sekunder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .input-box {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Utregning sekunder</h1>
+    <div class="input-box">
+        <label for="input1">Minutter:</label>
+        <input type="text" id="minutes" oninput="updateText()">
+    </div>
+    <div class="input-box">
+        <label for="input2">Sekunder:</label>
+        <input type="text" id="seconds" oninput="updateText()">
+    </div>
+    <div>
+        <p id="output" rows="4" cols="50" readonly></p>
+    </div>
+
+    <script>
+        const output = document.getElementById('output');
+        output.innerText = 'Totale sekunder: 0';
+
+        function updateText() {
+            const x = document.getElementById('minutes').value;
+            const y = document.getElementById('seconds').value;
+
+            let totalSeconds = 0;
+
+            if (!isNaN(x) && x.trim() !== '' && !isNaN(y) && y.trim() !== '') {
+                totalSeconds = parseInt(x) * 60 + parseInt(y);
+            } else if (!isNaN(x) && x.trim() !== '') {
+                totalSeconds = parseInt(x) * 60;
+            } else if (!isNaN(y) && y.trim() !== '') {
+                totalSeconds = parseInt(y);
+            } else {
+                totalSeconds = NaN;
+            }
+
+            if (!isNaN(totalSeconds)) {
+                output.innerText = `Totale sekunder: ${totalSeconds}`;
+            } else {
+                output.innerText = 'Totale sekunder: 0';
+            }
+        }
+    </script>
+</body>
+</html>
